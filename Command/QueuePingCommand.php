@@ -52,5 +52,7 @@ class QueuePingCommand extends Command implements ContainerAwareInterface
 
         $io->text(sprintf('Sent successfully. MessageID: <comment>%s</comment>', $messageId));
         $io->success('Done');
+
+        return 0;
     }
 }

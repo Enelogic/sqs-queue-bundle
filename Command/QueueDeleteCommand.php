@@ -50,7 +50,7 @@ class QueueDeleteCommand extends Command implements ContainerAwareInterface
             $io->note('Option --force is mandatory to drop data.');
             $io->warning('This action should not be used in the production environment.');
 
-            return;
+            return 1;
         }
 
         $queueUrl = $input->getArgument('url');
@@ -63,5 +63,7 @@ class QueueDeleteCommand extends Command implements ContainerAwareInterface
 
         $io->text('Deleted successfully');
         $io->success('Done');
+
+        return 0;
     }
 }

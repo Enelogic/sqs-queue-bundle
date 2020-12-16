@@ -52,5 +52,7 @@ class QueueAttrCommand extends Command implements ContainerAwareInterface
 
         $io->text('Updated successfully');
         $io->success('Done');
+
+        return 0;
     }
 }

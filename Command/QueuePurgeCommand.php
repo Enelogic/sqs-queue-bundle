@@ -51,7 +51,7 @@ class QueuePurgeCommand extends Command implements ContainerAwareInterface
             $io->note('Option --force is mandatory to drop data.');
             $io->warning('This action should not be used in the production environment.');
 
-            return;
+            return 1;
         }
 
         $queueName = $input->getArgument('name');
@@ -67,5 +67,7 @@ class QueuePurgeCommand extends Command implements ContainerAwareInterface
 
         $io->text('All message in your specified queue were removed successfully');
         $io->success('Done');
+
+        return 0;
     }
 }
