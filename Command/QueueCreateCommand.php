@@ -101,5 +101,7 @@ class QueueCreateCommand extends Command implements ContainerAwareInterface
 
         $io->text(sprintf('Created successfully. New Queue URL: <comment>%s</comment>', $queueUrl));
         $io->success('Done');
+
+        return 0;
     }
 }

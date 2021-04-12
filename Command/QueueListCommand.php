@@ -56,5 +56,7 @@ class QueueListCommand extends Command implements ContainerAwareInterface
         }
 
         $io->success('Done');
+
+        return 0;
     }
 }

@@ -46,13 +46,13 @@ class QueueUpdateCommand extends Command implements ContainerAwareInterface
             $io->note('Option --force is mandatory to update data.');
             $io->warning('This action should not be used in the production environment.');
 
-            return;
+            return 1;
         }
 
         if (!$this->container->hasParameter('tritran.sqs_queue.queues')) {
             $io->warning('Queue Configuration is missing.');
 
-            return;
+            return 1;
         }
 
         /** @var QueueManager $queueManager */
@@ -76,5 +76,7 @@ class QueueUpdateCommand extends Command implements ContainerAwareInterface
         }
 
         $io->success('Done');
+
+        return 0;
     }
 }
